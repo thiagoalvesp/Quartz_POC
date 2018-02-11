@@ -1,0 +1,28 @@
+﻿@model Quartz_POC.Models.Agendar
+@{
+    ViewBag.Title = "Agendador de Tarefas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @using (Html.BeginForm("AgendarTarefa", "Agendador", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Texto, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Texto)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-success" name="ButtonType" value="Agendar" />
+                    <input type="submit" class="btn btn-default" name="ButtonType" value="Iniciar" />
+                    <input type="submit" class="btn btn-danger" name="ButtonType" value="Parar" />
+                    <input type="reset" class="btn btn-primary" name="limpar" value="Limpar" />
+                </div>
+            </div>
+        </div>
+    }
+<div id="agendadorTarefa">
+</div>
