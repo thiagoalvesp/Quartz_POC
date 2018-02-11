@@ -17,6 +17,7 @@ namespace Quartz_POC.Service
             NameValueCollection props = new NameValueCollection
                 {
                     { "quartz.serializer.type", "binary" }
+
                 };
             StdSchedulerFactory factory = new StdSchedulerFactory(props);
             IScheduler scheduler = await factory.GetScheduler();
